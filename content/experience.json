@@ -1,0 +1,76 @@
+{
+  "items": [
+    {
+      "role": "Project Manager",
+      "company": "GOSTUDY co.",
+      "location": "Tainan, Taiwan",
+      "period": "May 2026 – Aug 2026",
+      "bullets": [
+        "Designed a three-layer AI-assisted system (material diagnosis, document generation, revision control) converting raw student data into competitive CVs and Statements of Purpose for international study applications.",
+        "Built a Google Apps Script pipeline to automatically extract and structure student data into JSON, paired with a custom Claude Skill that counsellors use to generate first-pass drafts in minutes — replacing a manual writing process that previously took 2–4 weeks per student.",
+        "Sole designer and builder, from problem diagnosis through system architecture to implementation; projected over 40× reduction in yearly production cost upon full deployment."
+      ],
+      "caseStudy": "gostudy-ai-document-engine"
+    },
+    {
+      "role": "Product Manager",
+      "company": "Jobwise HR Solutions Ltd.",
+      "location": "Tainan, Taiwan",
+      "period": "Sep 2025 – Nov 2025",
+      "bullets": [
+        "Architected a LINE Official Account self-service system for a 500+ student/year programme, designing a rich-menu navigation flow that routed common student questions to 30-second video answers and eliminated per-student manual replies at scale.",
+        "Specified content requirements and directed staff production of a trend-style (TikTok/Reels-format) video library, maintaining a personable, on-brand tone across a fully standardised support flow.",
+        "Designed a two-tier escalation path, routing unresolved queries to group conference sessions, cutting 1:1 meeting volume while preserving human support for complex cases.",
+        "Partnered with Crescendo Lab, Taiwan's LINE Official Account Gold-tier technical partner, to implement the backstage system, while owning the product end-to-end: business case, system architecture, content specification and staff coordination."
+      ],
+      "caseStudy": "jobwise-line-self-service"
+    },
+    {
+      "role": "Freelance AI Trainer",
+      "company": "Outlier",
+      "location": "Remote",
+      "period": "Aug 2024 – Present",
+      "bullets": [
+        "Contributing to the optimisation and evaluation of Outlier's AI models as a freelance trainer."
+      ],
+      "caseStudy": ""
+    },
+    {
+      "role": "CRM Implementation Intern",
+      "company": "Jobwise HR Solutions Ltd.",
+      "location": "Tainan, Taiwan",
+      "period": "Jul 2023 – Sep 2023",
+      "bullets": [
+        "Spearheaded the agile deployment of the company's first CRM platform, achieving an 80% increase in sales workflow efficiency.",
+        "Drove system configuration and UAT to a 90% pass rate, ensuring the new platform was production-ready before rollout.",
+        "Facilitated cross-departmental alignment across sales, finance and marketing to design and integrate the new workflow, contributing to a 25% increase in customer base through continual post-implementation enhancements."
+      ],
+      "caseStudy": "jobwise-crm-implementation"
+    },
+    {
+      "role": "Interactive Production Team Leader",
+      "company": "360Fashion Network",
+      "location": "Remote, USA",
+      "period": "Oct 2021 – Mar 2022",
+      "bullets": [
+        "Served as team leader for the interactive production team, managing a group of interns and collaborating to complete 4 AR and VR productions that enhanced user interaction with products.",
+        "Led the launch and streamlining of a new fashion tech news service across multimedia formats, attracting nearly 200 newsletter subscribers and achieving a 2% weekly increase in podcast audience.",
+        "Collaborated with the M5Stack team to assist in developing fashion products using their hardware and software solutions."
+      ],
+      "caseStudy": ""
+    },
+    {
+      "role": "Fashion Tech Virtual Intern",
+      "company": "360Fashion Network",
+      "location": "Remote, USA",
+      "period": "Aug 2021",
+      "bullets": [
+        "Assisted in delivering the \"Python Basics for AI & Robotics\" course at Popular Robotics, helping two team members obtain their certification.",
+        "Streamlined the social media content creation process using AI platforms.",
+        "Utilised MarketMuse and its AI tools for SEO optimisation to enhance the performance of social media content.",
+        "Leveraged the WeChat Public Accounts Platform to publish Chinese content, expanding reach to potential users."
+      ],
+      "caseStudy": ""
+    }
+  ]
+}

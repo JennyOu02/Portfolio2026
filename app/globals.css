@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-night text-ink font-sans antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(0, 240, 255, 0.3);
+  color: #fff;
+}
+
+/* thin neon scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #05050a;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00f0ff44, #8b5cf644);
+  border-radius: 8px;
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/[0.03] border border-line backdrop-blur-md rounded-2xl;
+  }
+
+  .neon-text {
+    @apply bg-neon-gradient bg-clip-text text-transparent;
+  }
+
+  .neon-chip {
+    @apply font-mono text-xs uppercase tracking-wider px-2.5 py-1 rounded-md
+      border border-neon-cyan/30 text-neon-cyan/90 bg-neon-cyan/5;
+  }
+
+  .kicker {
+    @apply font-mono text-sm tracking-[0.25em] uppercase text-neon-cyan;
+  }
+
+  .btn-neon {
+    @apply inline-flex items-center gap-2 rounded-lg px-6 py-3 font-display font-semibold
+      text-night bg-neon-gradient transition-transform duration-200
+      hover:scale-[1.04] hover:shadow-glow-violet;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded-lg px-6 py-3 font-display font-semibold
+      border border-line text-ink transition-colors duration-200
+      hover:border-neon-cyan/60 hover:text-neon-cyan hover:shadow-glow-cyan;
+  }
+}
+
+/* fixed background grid */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(0, 240, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 40%, transparent 100%);
+}
+
+/* subtle scanlines over the whole page */
+.bg-scanlines {
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(255, 255, 255, 0.012) 3px,
+    rgba(255, 255, 255, 0.012) 4px
+  );
+}

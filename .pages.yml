@@ -1,0 +1,161 @@
+media:
+  input: public/img
+  output: /img
+
+content:
+  - name: profile
+    label: Profile & About
+    type: file
+    path: content/profile.json
+    fields:
+      - { name: name, label: Full Name, type: string }
+      - { name: shortName, label: Short Name, type: string }
+      - { name: heroKicker, label: Hero Kicker Line, type: string }
+      - { name: tagline, label: Tagline, type: text }
+      - { name: typewriter, label: Typewriter Roles, type: string, list: true }
+      - { name: about, label: About Paragraphs, type: text, list: true }
+      - name: stats
+        label: Hero Stats
+        type: object
+        list: true
+        fields:
+          - { name: value, label: "Value (e.g. 40×)", type: string }
+          - { name: label, label: Label, type: string }
+      - { name: location, label: Location, type: string }
+      - { name: email, label: Email, type: string }
+      - { name: linkedin, label: LinkedIn URL, type: string }
+      - { name: github, label: GitHub URL, type: string }
+      - { name: cv, label: CV File, type: file }
+      - { name: portrait, label: Portrait Photo, type: image }
+      - { name: logo, label: Logo, type: image }
+      - name: languages
+        label: Spoken Languages
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Language, type: string }
+          - { name: level, label: Level, type: string }
+
+  - name: projects
+    label: Projects (Case Studies)
+    type: collection
+    path: content/projects
+    format: yaml-frontmatter
+    view:
+      fields: [title, category, kind, featured, order]
+      sort: [order, title]
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: tagline, label: Tagline (one-line hook), type: text }
+      - name: category
+        label: Category
+        type: select
+        options:
+          values: ["Product & AI", "Web Apps", "Games", "IoT"]
+      - name: kind
+        label: Kind
+        type: select
+        options:
+          values: [Professional, Academic, Personal]
+      - { name: org, label: Organisation, type: string }
+      - { name: role, label: Your Role, type: string }
+      - { name: period, label: Timeline (e.g. May 2026 – Aug 2026), type: string }
+      - { name: location, label: Location, type: string }
+      - { name: cover, label: Cover Image, type: image }
+      - { name: featured, label: Featured, type: boolean }
+      - { name: order, label: Display Order, type: number }
+      - { name: tags, label: Tech / Skill Tags, type: string, list: true }
+      - { name: context, label: "The Context (situation)", type: text }
+      - { name: problem, label: "The Problem (pain point & stakes)", type: text }
+      - { name: solution, label: "The Solution (what you built — bullets)", type: text, list: true }
+      - name: impact
+        label: "The Impact (measurable results)"
+        type: object
+        list: true
+        fields:
+          - { name: value, label: "Metric (e.g. 80%)", type: string }
+          - { name: label, label: What it means, type: string }
+      - name: gallery
+        label: Gallery
+        type: object
+        list: true
+        fields:
+          - { name: src, label: Image, type: image }
+          - { name: caption, label: Caption, type: string }
+      - name: links
+        label: Links (video, live demo, repo)
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Button Label, type: string }
+          - { name: url, label: URL, type: string }
+      - { name: body, label: Extra Notes (optional paragraphs), type: text }
+
+  - name: experience
+    label: Experience
+    type: file
+    path: content/experience.json
+    fields:
+      - name: items
+        label: Roles
+        type: object
+        list: true
+        fields:
+          - { name: role, label: Job Title, type: string }
+          - { name: company, label: Company, type: string }
+          - { name: location, label: Location, type: string }
+          - { name: period, label: Period, type: string }
+          - { name: bullets, label: Achievement Bullets, type: text, list: true }
+          - { name: caseStudy, label: "Linked case-study slug (optional)", type: string }
+
+  - name: education
+    label: Education
+    type: file
+    path: content/education.json
+    fields:
+      - name: items
+        label: Schools
+        type: object
+        list: true
+        fields:
+          - { name: degree, label: Degree / Qualification, type: string }
+          - { name: school, label: School, type: string }
+          - { name: location, label: Location, type: string }
+          - { name: period, label: Period, type: string }
+          - { name: details, label: Details, type: text, list: true }
+          - { name: image, label: Image (optional), type: image }
+
+  - name: skills
+    label: Skills
+    type: file
+    path: content/skills.json
+    fields:
+      - { name: iconGroupLabel, label: Icon Group Heading, type: string }
+      - name: icons
+        label: Skills with Icons
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Skill, type: string }
+          - { name: icon, label: Icon, type: image }
+      - { name: chipGroupLabel, label: Chip Group Heading, type: string }
+      - { name: chips, label: Skill Chips, type: string, list: true }
+
+  - name: extras
+    label: Beyond Work
+    type: file
+    path: content/extras.json
+    fields:
+      - name: items
+        label: Activities
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: org, label: Organisation, type: string }
+          - { name: description, label: Description, type: text }
+          - name: category
+            label: Category
+            type: select
+            options:
+              values: [tech, non-tech]

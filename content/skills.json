@@ -1,0 +1,27 @@
+{
+  "iconGroupLabel": "Languages & Frameworks",
+  "icons": [
+    { "name": "Python", "icon": "/img/python.png" },
+    { "name": "JavaScript", "icon": "/img/js.png" },
+    { "name": "Java", "icon": "/img/java.png" },
+    { "name": "PHP", "icon": "/img/files.png" },
+    { "name": "SQL", "icon": "/img/database.png" },
+    { "name": "Django", "icon": "/img/django.svg" },
+    { "name": "Vue", "icon": "/img/vuejs.png" },
+    { "name": "React", "icon": "/img/atom.png" },
+    { "name": "Unity", "icon": "/img/unity.png" }
+  ],
+  "chipGroupLabel": "Product & Delivery",
+  "chips": [
+    "Product Management",
+    "System Architecture",
+    "AI Workflow Design",
+    "Claude Skills & Prompt Engineering",
+    "Google Apps Script",
+    "CRM Implementation",
+    "Agile & UAT",
+    "UI/UX Design",
+    "Data Analysis",
+    "SEO Optimisation"
+  ]
+}

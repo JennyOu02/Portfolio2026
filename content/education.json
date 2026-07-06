@@ -1,0 +1,35 @@
+{
+  "items": [
+    {
+      "degree": "MSc Business Information Technology Management",
+      "school": "University of Amsterdam",
+      "location": "Amsterdam, Netherlands",
+      "period": "From Sep 2026",
+      "details": [
+        "Coursework: Digital Transformation, Data Science and AI for Business, AI Impact Lab, Digital Impact Lab."
+      ],
+      "image": ""
+    },
+    {
+      "degree": "BSc (Eng) Creative Computing — 2:1 Honours",
+      "school": "Queen Mary University of London",
+      "location": "London, UK",
+      "period": "Sep 2021 – Jul 2024",
+      "details": [
+        "A Computer Science programme with a strong emphasis on the intersection of technology and creativity, built on extensive hands-on project work.",
+        "Coursework: Software Engineering, Data Mining, Neural Network Machine Learning, Database Systems, Web Application Development, IoT, UI/UX Design."
+      ],
+      "image": "/img/Award Certificate QMUL.png"
+    },
+    {
+      "degree": "A-Levels — Maths, Computer Science, Physics, Economics",
+      "school": "The College of Richard Collyer",
+      "location": "Horsham, UK",
+      "period": "Jan 2018 – Aug 2021",
+      "details": [
+        "Where the UK and computing adventure started."
+      ],
+      "image": "/img/collyers.png"
+    }
+  ]
+}

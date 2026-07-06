@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "title": "AWS JAM Hackathon — Top 5",
+      "org": "Firemind, London",
+      "description": "Top 5 finish in a team of 3, competing on AWS cloud services and security challenges.",
+      "category": "tech"
+    },
+    {
+      "title": "Technology Internship Experience",
+      "org": "Bright Network",
+      "description": "Worked on various projects, enhancing my skills in software development and team collaboration.",
+      "category": "tech"
+    },
+    {
+      "title": "Mentee, Embrace Mentoring Programme",
+      "org": "Microsoft",
+      "description": "Gained insights into advanced technologies and professional practices from leading industry experts.",
+      "category": "tech"
+    },
+    {
+      "title": "Marketing Team",
+      "org": "Student Union ROC Taiwan in the UK (SUROCUK)",
+      "description": "Developed and executed marketing campaigns to increase student engagement across the UK.",
+      "category": "non-tech"
+    },
+    {
+      "title": "Assistant Producer",
+      "org": "TogetherBa Film Co., Ltd",
+      "description": "Assisted in the production of short films, handling logistics and coordination of film shoots.",
+      "category": "non-tech"
+    },
+    {
+      "title": "Member / Public Speaker",
+      "org": "ToastMasters",
+      "description": "Enhanced public speaking and leadership skills through regular workshops and community events.",
+      "category": "non-tech"
+    }
+  ]
+}
