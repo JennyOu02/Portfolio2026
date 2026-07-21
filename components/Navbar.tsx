@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import { withBase } from '@/lib/paths';
 
 const LINKS = [
-  { href: '/#about', label: 'About' },
   { href: '/#work', label: 'Work' },
   { href: '/#experience', label: 'Experience' },
   { href: '/#skills', label: 'Skills' },
@@ -13,7 +12,18 @@ const LINKS = [
   { href: '/#contact', label: 'Contact' },
 ];
 
-export default function Navbar({ logo, cv }: { logo: string; cv: string }) {
+/**
+ * Mirrors the hero card's box so the nav's edges land on the card's borders:
+ * the hero caps its frame at 1300px inside a clamp() gutter, so the cap here
+ * is that width plus the gutter the padding gives back.
+ */
+const SHELL: React.CSSProperties = {
+  maxWidth: 'calc(1300px + 2 * clamp(10px, 2vw, 24px))',
+  paddingLeft: 'clamp(10px, 2vw, 24px)',
+  paddingRight: 'clamp(10px, 2vw, 24px)',
+};
+
+export default function Navbar({ cv }: { cv: string }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -30,9 +40,14 @@ export default function Navbar({ logo, cv }: { logo: string; cv: string }) {
         scrolled ? 'bg-night/80 backdrop-blur-lg border-b border-line' : 'bg-transparent'
       }`}
     >
-      <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <img src={withBase(logo)} alt="Jenny Ou" className="h-8 w-auto" />
+      <div style={SHELL} className="mx-auto py-4 flex items-center justify-between">
+        <Link
+          href="/"
+          aria-label="Jenny Ou — home"
+          className="font-display text-2xl font-bold tracking-tight text-ink hover:text-neon-cyan transition-colors"
+          onClick={() => setOpen(false)}
+        >
+          O<span className="text-neon-cyan">.</span>J
         </Link>
 
         <div className="hidden md:flex items-center gap-7">
@@ -66,20 +81,22 @@ export default function Navbar({ logo, cv }: { logo: string; cv: string }) {
       </div>
 
       {open && (
-        <div className="md:hidden bg-night/95 backdrop-blur-lg border-b border-line px-6 pb-6 pt-2 space-y-1">
-          {LINKS.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="block py-2.5 font-mono text-sm text-ink-dim hover:text-neon-cyan transition-colors"
-            >
-              {l.label}
-            </Link>
-          ))}
-          <a href={withBase(cv)} className="inline-block mt-3 neon-chip">
-            Download CV ↓
-          </a>
+        <div className="md:hidden bg-night/95 backdrop-blur-lg border-b border-line">
+          <div style={SHELL} className="mx-auto pb-6 pt-2 space-y-1">
+            {LINKS.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="block py-2.5 font-mono text-sm text-ink-dim hover:text-neon-cyan transition-colors"
+              >
+                {l.label}
+              </Link>
+            ))}
+            <a href={withBase(cv)} className="inline-block mt-3 neon-chip">
+              Download CV ↓
+            </a>
+          </div>
         </div>
       )}
     </nav>

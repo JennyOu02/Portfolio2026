@@ -1,4 +1,5 @@
-import Hero from '@/components/Hero';
+import HeroAbout from '@/components/HeroAbout';
+import Journey from '@/components/Journey';
 import Reveal from '@/components/Reveal';
 import SectionHeading from '@/components/SectionHeading';
 import Timeline from '@/components/Timeline';
@@ -35,53 +36,40 @@ export default function Home() {
   const techExtras = extras.filter((e) => e.category === 'tech');
   const otherExtras = extras.filter((e) => e.category !== 'tech');
 
+  // Hero dashboard: every number carries the case study it came from.
+  const projectBySlug = new Map(projects.map((p) => [p.slug, p]));
+  const proof = profile.stats.map((s) => {
+    const p = s.slug ? projectBySlug.get(s.slug) : undefined;
+    return { ...s, source: p?.title, org: p?.org };
+  });
+  const heroEducation = education
+    .filter((e) => e.hero !== false)
+    .map((e) => ({
+      school: e.school,
+      degree: e.short ?? e.degree,
+      period: e.period,
+      image: e.image,
+      imageBg: e.imageBg,
+    }));
+
   return (
     <main>
-      <Hero
+      {/* HERO + ABOUT — About lives on the back of the flip card */}
+      <HeroAbout
         kicker={profile.heroKicker}
-        name={profile.name}
-        shortName={profile.shortName}
         tagline={profile.tagline}
-        typewriter={profile.typewriter}
-        stats={profile.stats}
-        cv={profile.cv}
+        about={profile.about}
+        email={profile.email}
+        linkedin={profile.linkedin}
+        github={profile.github}
+        portrait={profile.portrait}
+        proof={proof}
+        education={heroEducation}
+        skills={skills.heroSkills}
       />
 
-      {/* ABOUT */}
-      <section id="about" className="scroll-mt-24 py-24">
-        <div className="mx-auto max-w-6xl px-6">
-          <SectionHeading index="01" label="About" title="Who I am" />
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-10 items-start">
-            <Reveal className="md:col-span-3 space-y-5">
-              {profile.about.map((p, i) => (
-                <p key={i} className="text-ink-dim leading-relaxed">
-                  {p}
-                </p>
-              ))}
-              <div className="flex flex-wrap gap-2 pt-2">
-                {profile.languages.map((l) => (
-                  <span key={l.name} className="neon-chip">
-                    {l.name} · {l.level}
-                  </span>
-                ))}
-                <span className="neon-chip border-neon-magenta/30 text-neon-magenta/90 bg-neon-magenta/5">
-                  {profile.location}
-                </span>
-              </div>
-            </Reveal>
-            <Reveal delay={0.15} className="md:col-span-2">
-              <div className="relative">
-                <div className="absolute -inset-1 rounded-2xl bg-neon-gradient opacity-40 blur-md" />
-                <img
-                  src={withBase(profile.portrait)}
-                  alt={profile.shortName}
-                  className="relative rounded-2xl w-full object-cover border border-line"
-                />
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
+      {/* JOURNEY — deliberately absent from the navbar */}
+      <Journey />
 
       {/* WORK */}
       <section id="work" className="scroll-mt-24 py-24 border-t border-line">
@@ -127,11 +115,25 @@ export default function Home() {
                     ))}
                   </div>
                   {e.image && (
-                    <img
-                      src={withBase(e.image)}
-                      alt={e.school}
-                      className="mt-auto pt-4 w-full rounded-lg opacity-90"
-                    />
+                    // Fixed-height box + object-contain: every logo occupies the same
+                    // space and none of them get stretched.
+                    <div className="mt-auto flex h-40 items-center justify-center pt-8">
+                      {e.imageBg === 'white' ? (
+                        <div className="flex h-full items-center justify-center rounded-xl bg-white p-3">
+                          <img
+                            src={withBase(e.image)}
+                            alt={e.school}
+                            className="max-h-full max-w-full object-contain"
+                          />
+                        </div>
+                      ) : (
+                        <img
+                          src={withBase(e.image)}
+                          alt={e.school}
+                          className="max-h-full max-w-full object-contain"
+                        />
+                      )}
+                    </div>
                   )}
                 </div>
               </Reveal>

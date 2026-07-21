@@ -73,6 +73,89 @@ body {
   -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 40%, transparent 100%);
 }
 
+/* Hero dashboard tiles — each sets --c to its own accent so hover picks it up. */
+.hero-tile {
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+.hero-tile:hover {
+  border-color: var(--c);
+  box-shadow: 0 0 18px -6px var(--c);
+  transform: translateX(2px);
+}
+
+/* Hero flip button — haloes until it's been used once. */
+.hero-flip {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.hero-flip[data-idle='true'] {
+  animation: heroFlipHalo 2.8s ease-in-out infinite;
+}
+.hero-flip:hover {
+  transform: translateY(-1px) scale(1.03);
+  animation-play-state: paused;
+}
+.hero-flip-arrow {
+  display: inline-block;
+  transition: transform 0.45s ease;
+}
+.hero-flip:hover .hero-flip-arrow {
+  transform: rotate(180deg);
+}
+
+@keyframes heroFlipHalo {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(53, 230, 212, 0.5),
+      0 8px 24px rgba(0, 0, 0, 0.45);
+  }
+  60% {
+    box-shadow:
+      0 0 0 12px rgba(53, 230, 212, 0),
+      0 8px 24px rgba(0, 0, 0, 0.45);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-flip[data-idle='true'] {
+    animation: none;
+  }
+}
+
+/*
+ * Below ~900px the three dashboard columns can't fit side by side, so they stack and
+ * the card grows to hold them. The character is dropped there: it's centred over the
+ * full card and would cover the stacked content.
+ */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+  /* The fixed card height only holds while the columns sit side by side. */
+  .hero-stage-frame {
+    height: auto !important;
+    min-height: 520px;
+  }
+  .hero-stage,
+  .hero-character {
+    display: none !important;
+  }
+  /* About face stacks too — portrait above the copy, and smaller. */
+  .hero-about {
+    grid-template-columns: 1fr !important;
+    justify-items: center;
+  }
+  .hero-about > :first-child {
+    max-width: 220px !important;
+  }
+}
+
 /* subtle scanlines over the whole page */
 .bg-scanlines {
   background: repeating-linear-gradient(

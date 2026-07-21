@@ -4,6 +4,17 @@ import matter from 'gray-matter';
 
 const CONTENT_DIR = path.join(process.cwd(), 'content');
 
+export interface ProfileStat {
+  value: string;
+  label: string;
+  /** Qualifier shown beside the value — e.g. "projected", so the claim carries its own caveat. */
+  note?: string;
+  /** Case study this number came from; makes the stat clickable and gives it a source. */
+  slug?: string;
+  /** The question the project answers — headlines the hero's project card. */
+  question?: string;
+}
+
 export interface Profile {
   name: string;
   shortName: string;
@@ -11,7 +22,7 @@ export interface Profile {
   tagline: string;
   typewriter: string[];
   about: string[];
-  stats: { value: string; label: string }[];
+  stats: ProfileStat[];
   location: string;
   email: string;
   linkedin: string;
@@ -33,16 +44,24 @@ export interface ExperienceItem {
 
 export interface EducationItem {
   degree: string;
+  /** Compact form of `degree` for tight spots like the hero strip. */
+  short?: string;
   school: string;
   location: string;
   period: string;
   details: string[];
   image: string;
+  /** "white" puts the logo on a white plate — for marks that need a light background. */
+  imageBg?: 'white';
+  /** `false` keeps the entry out of the hero strip; it still shows in the Education section. */
+  hero?: boolean;
 }
 
 export interface SkillsData {
   iconGroupLabel: string;
   icons: { name: string; icon: string }[];
+  /** The hero dashboard's proficiency bars — label + 0–100 fill. */
+  heroSkills: { label: string; level: number }[];
   chipGroupLabel: string;
   chips: string[];
 }

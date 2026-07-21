@@ -11,17 +11,27 @@
     { "name": "React", "icon": "/img/atom.png" },
     { "name": "Unity", "icon": "/img/unity.png" }
   ],
+  "heroSkills": [
+    { "label": "AI IMPLEMENTATION", "level": 95 },
+    { "label": "SYSTEM ARCHITECTURE", "level": 88 },
+    { "label": "PRODUCT MANAGEMENT", "level": 90 },
+    { "label": "SOFTWARE ENGINEERING", "level": 82 },
+    { "label": "CRM & AUTOMATION", "level": 85 },
+    { "label": "DATA & METRICS", "level": 78 }
+  ],
   "chipGroupLabel": "Product & Delivery",
   "chips": [
-    "Product Management",
     "System Architecture",
     "AI Workflow Design",
-    "Claude Skills & Prompt Engineering",
-    "Google Apps Script",
+    "Prompt Engineering",
     "CRM Implementation",
     "Agile & UAT",
-    "UI/UX Design",
+    "Database Design",
     "Data Analysis",
+    "Product Management",
+    "Claude Skills",
+    "Google Apps Script",
+    "UI/UX Design",
     "SEO Optimisation"
   ]
 }

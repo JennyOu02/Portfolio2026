@@ -1,8 +1,8 @@
 {
-  "name": "Fan-Yi (Jenny) Ou",
+  "name": "Jenny Ou",
   "shortName": "Jenny Ou",
-  "heroKicker": "PRODUCT × ENGINEERING × AI",
-  "tagline": "I turn messy, manual processes into products that ship — and prove it with numbers.",
+  "heroKicker": "SYSTEM × AI x PRODUCT",
+  "tagline": "I turn messy, manual processes into products that ship, and prove it with numbers.",
   "typewriter": [
     "Project Manager",
     "AI Systems Builder",
@@ -15,9 +15,25 @@
     "Whether it's an AI document pipeline, a CRM rollout or a full-stack matching platform, my approach is the same: diagnose the real problem, design the system, ship it, and measure the impact."
   ],
   "stats": [
-    { "value": "40×", "label": "projected yearly cost reduction — AI document engine" },
-    { "value": "500+", "label": "students per year served by self-service platform" },
-    { "value": "80%", "label": "sales workflow efficiency gain from CRM rollout" }
+    {
+      "value": "40×",
+      "note": "projected",
+      "label": "yearly cost reduction",
+      "slug": "gostudy-ai-document-engine",
+      "question": "How do I cut 40× budget with AI for a study-abroad agency?"
+    },
+    {
+      "value": "500+",
+      "label": "students a year served",
+      "slug": "jobwise-line-self-service",
+      "question": "How do I keep quality while handling 500+ applications a year?"
+    },
+    {
+      "value": "80%",
+      "label": "sales workflow efficiency",
+      "slug": "jobwise-crm-implementation",
+      "question": "How do I make a sales team 80% more efficient?"
+    }
   ],
   "location": "Taiwan → Amsterdam",
   "email": "jennyoutw@gmail.com",

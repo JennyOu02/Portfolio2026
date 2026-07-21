@@ -26,6 +26,8 @@ const config: Config = {
         display: ['var(--font-display)', 'sans-serif'],
         sans: ['var(--font-sans)', 'sans-serif'],
         mono: ['var(--font-mono)', 'monospace'],
+        sora: ['var(--font-sora)', 'sans-serif'],
+        'space-mono': ['var(--font-space-mono)', 'monospace'],
       },
       boxShadow: {
         'glow-cyan': '0 0 24px rgba(0,240,255,0.25)',
@@ -39,8 +41,18 @@ const config: Config = {
         'float-slow': 'floatSlow 14s ease-in-out infinite',
         'float-slower': 'floatSlow 20s ease-in-out infinite reverse',
         blink: 'blink 1s step-end infinite',
+        'fade-up': 'fadeUp 0.5s ease both',
+        'hud-pulse': 'hudPulse 1.5s ease-in-out infinite',
       },
       keyframes: {
+        fadeUp: {
+          from: { opacity: '0', transform: 'translateY(10px)' },
+          to: { opacity: '1', transform: 'none' },
+        },
+        hudPulse: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.35' },
+        },
         floatSlow: {
           '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
           '50%': { transform: 'translate(60px, -40px) scale(1.15)' },
